@@ -49,7 +49,12 @@ app.post('/send', (req, res) => {
       rejectUnauthorized:false
     }
   });
-
+ // Handle errors
+   handler.use(function (req, res) {
+   res.statusCode = 404
+     res.end('404 not found: ' + escapeHtml(req.url))
+   })
+  
   // setup email data with unicode symbols
   let mailOptions = {
       from: '"Nodemailer Contact" <your@email.com>', // sender address
