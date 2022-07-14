@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const nodemailer = require('nodemailer');
 
-const app = express();
+const app = express.Router();
 
 // View engine setup
 app.engine('handlebars', exphbs());
