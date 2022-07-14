@@ -16,6 +16,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+const rateLimit = require("express-rate-limit");
 
 app.get('/', (req, res) => {
   res.render('contact');
